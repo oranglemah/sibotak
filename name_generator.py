@@ -104,11 +104,12 @@ def get_university_domain(university_name):
     name = name.replace(' state', '')
     name = name.replace('-', '')
     name = name.replace(' at ', '')
+    name = name.replace(' campus', '')
     
     # Handle special cases
-    if 'ucla' in name or 'los angeles' in name and 'california' in name:
+    if 'ucla' in name or ('los angeles' in name and 'california' in name):
         return 'ucla.edu'
-    elif 'uc berkeley' in name or 'california' in name and 'berkeley' in name:
+    elif 'uc berkeley' in name or ('california' in name and 'berkeley' in name):
         return 'berkeley.edu'
     elif 'mit' in name or 'massachusetts institute' in name:
         return 'mit.edu'
